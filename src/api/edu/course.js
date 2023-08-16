@@ -31,6 +31,35 @@ export default {
       url:`/eduservice/course/updateCourseInfo`,
       method:`post`,
       data:courseInfo
+      // data中的数据会传到后端接口中去
     })
-  }
+  },
+//   课程确认信息显示
+  getPublishCourseInfoId(id){
+    return request({
+      url:`/eduservice/course/getPublishCourseInfo/${id}`,
+      method:`get`
+    })
+  },
+//   课程最终发布
+  PublishCourse(id){
+    return request({
+      url:`/eduservice/course/publishCourse/${id}`,
+      method:`get`
+    })
+  },
+  //   课程列表
+  getListCourse(){
+    return request({
+      url:`/eduservice/course/getCourseList`,
+      method:`get`
+    })
+  },
+  // 删除课程
+  removeById(courseId){
+    return request({
+      url: `/eduservice/course/${courseId}`,
+      method: 'delete'
+    })
+  },
 }

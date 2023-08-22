@@ -29,5 +29,12 @@ export default {
       url: `/eduservice/video/${id}`,
       method: 'delete'
     })
+  },
+  // 删除阿里云中的视频
+  deleteAlyVideo(id){
+    return request({
+      url: `/eduvod/video/removeAlyVideo/${id}`,
+      method: 'delete'
+    })
   }
 }
